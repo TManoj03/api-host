@@ -13,15 +13,16 @@ import multer from "multer";
 
 //middlewares
 app.use((req,res,next)=>{
-    res.header("Access-control-Allow-Credentials", true)
+    res.header("Access-Control-Allow-Credentials", true),
+    res.header("Access-Control-Allow-Origin",'*')
     next()
 });
 app.use(express.json())
-app.use(
-    cors({
-        origin:["http://localhost:3000","https://client-host-ixw7.onrender.com"]
-    })
-);
+// app.use(
+//     cors({
+//         origin:["http://localhost:3000","https://client-host-ixw7.onrender.com"]
+//     })
+// );
 app.use(cookieParser())
 
 const storage = multer.diskStorage({
