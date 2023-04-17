@@ -18,11 +18,11 @@ app.use((req,res,next)=>{
     next()
 });
 app.use(express.json())
-// app.use(
-//     cors({
-//         origin:["http://localhost:3000","https://client-host-ixw7.onrender.com"]
-//     })
-// );
+app.use(
+    cors({
+        origin:["http://localhost:3000","https://client-host-ixw7.onrender.com"]
+    })
+);
 app.use(cookieParser())
 
 const storage = multer.diskStorage({
